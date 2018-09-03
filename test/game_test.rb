@@ -3,6 +3,8 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/player'
 require './lib/game'
+require './lib/ship'
+require 'pry'
 
 class GameTest < Minitest::Test
 
@@ -17,6 +19,15 @@ class GameTest < Minitest::Test
 
     assert_instance_of Player, game.computer
     assert_instance_of Player, game.person
+  end
+
+  def test_each_player_has_two_ships_to_start
+    game = Game.new
+
+    assert_instance_of Ship, game.computer.cruiser
+    assert_instance_of Ship, game.computer.destroyer
+    assert_instance_of Ship, game.person.cruiser
+    assert_instance_of Ship, game.person.destroyer
   end
 
 end
