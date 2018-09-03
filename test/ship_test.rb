@@ -16,6 +16,6 @@ class ShipTest < Minitest::Test
     ship_2 = Ship.new("3")
 
     assert_equal "2", ship.length
-    assert_equal "3", ship_2.length 
+    assert_equal "3", ship_2.length
   end
 end
