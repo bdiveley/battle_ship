@@ -30,4 +30,21 @@ class GameTest < Minitest::Test
     assert_instance_of Ship, game.person.destroyer
   end
 
+  def test_can_assign_coordinates_randomly
+    game = Game.new
+    game.randomly_assign_coordinates
+
+    assert_equal 2, game.computer.destroyer.coordinates.count
+    assert_equal 3, game.computer.cruiser.coordinates.count
+  end
+
+  def test_can_assign_coordinates_from_user
+    game = Game.new
+    game.get_coordinates
+
+    assert_equal 2, game.person.destroyer.coordinates.count
+    assert_equal 3, game.person.cruiser.coordinates.count
+  end
+
+
 end
