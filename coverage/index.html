@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.2/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.2/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.2/favicon_red.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.2/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-03T13:52:00-06:00">2018-09-03T13:52:00-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-03T15:44:28-06:00">2018-09-03T15:44:28-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">89.29%</span></span>
+    (<span class="covered_percent"><span class="red">35.71%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         31.8
+         1.31
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>1</b> files in total.
-    <b>56</b> relevant lines. 
-    <span class="green"><b>50</b> lines covered</span> and
-    <span class="red"><b>6</b> lines missed </span>
+    <b>4</b> files in total.
+    <b>70</b> relevant lines. 
+    <span class="green"><b>25</b> lines covered</span> and
+    <span class="red"><b>45</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,13 +51,43 @@
     <tbody>
       
       <tr>
+        <td class="strong"><a href="#62fc393bf8b6b9bd98fa704acd12c85499637642" class="src_link" title="lib/board.rb">lib/board.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>10</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>1.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#cd6a7f375084b2dc787c5b1ead9521e3e534250d" class="src_link" title="lib/player.rb">lib/player.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>11</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>2.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#76b361beaf3b7744c8217e4656cbba21e82b35e8" class="src_link" title="lib/ship.rb">lib/ship.rb</a></td>
-        <td class="yellow strong">89.29 %</td>
+        <td class="red strong">19.64 %</td>
         <td>92</td>
         <td>56</td>
-        <td>50</td>
-        <td>6</td>
-        <td>31.8</td>
+        <td>11</td>
+        <td>45</td>
+        <td>0.4</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#86aaa2554d29e918d8eb4b373f5296b0fba1bcd1" class="src_link" title="lib/space.rb">lib/space.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>8</td>
+        <td>4</td>
+        <td>4</td>
+        <td>0</td>
+        <td>12.8</td>
       </tr>
       
     </tbody>
@@ -76,14 +106,178 @@
     
       <div class="source_files">
       
+        <div class="source_table" id="62fc393bf8b6b9bd98fa704acd12c85499637642">
+  <div class="header">
+    <h3>lib/board.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Board</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :grid</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @grid = {A:[Space.new(&quot;A1&quot;), Space.new(&quot;A2&quot;), Space.new(&quot;A3&quot;), Space.new(&quot;A4&quot;)],</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">             B: [Space.new(&quot;B1&quot;), Space.new(&quot;B2&quot;), Space.new(&quot;B3&quot;), Space.new(&quot;B4&quot;)],</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">             C: [Space.new(&quot;C1&quot;), Space.new(&quot;C2&quot;), Space.new(&quot;C3&quot;), Space.new(&quot;C4&quot;)],</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">             D: [Space.new(&quot;D1&quot;), Space.new(&quot;D2&quot;), Space.new(&quot;D3&quot;), Space.new(&quot;D4&quot;)]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="cd6a7f375084b2dc787c5b1ead9521e3e534250d">
+  <div class="header">
+    <h3>lib/player.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Player</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :destroyer,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">              :cruiser,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">              :board</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @destroyer = Ship.new(&quot;2&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @cruiser = Ship.new(&quot;3&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @board = Board.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="76b361beaf3b7744c8217e4656cbba21e82b35e8">
   <div class="header">
     <h3>lib/ship.rb</h3>
-    <h4><span class="yellow">89.29 %</span> covered</h4>
+    <h4><span class="red">19.64 %</span> covered</h4>
     <div>
       <b>56</b> relevant lines. 
-      <span class="green"><b>50</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>45</b> lines missed.</span>
     </div>
   </div>
   
@@ -120,14 +314,14 @@
           <code class="ruby">  def initialize(length)</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="6">
-          <span class="hits">23</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
           <code class="ruby">    @length = length</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="7">
-          <span class="hits">23</span>
+        <li class="covered" data-hits="6" data-linenumber="7">
+          <span class="hits">6</span>
           
           <code class="ruby">    @coordinates = []</code>
         </li>
@@ -156,8 +350,8 @@
           <code class="ruby">    [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;].sample +</code>
         </li>
       
-        <li class="covered" data-hits="280" data-linenumber="12">
-          <span class="hits">280</span>
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
           
           <code class="ruby">    [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;,&quot;4&quot;].sample</code>
         </li>
@@ -180,8 +374,8 @@
           <code class="ruby">  def verify_first_coord</code>
         </li>
       
-        <li class="covered" data-hits="204" data-linenumber="16">
-          <span class="hits">204</span>
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
           
           <code class="ruby">    if @length == 2</code>
         </li>
@@ -216,14 +410,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="204" data-linenumber="22">
-          <span class="hits">204</span>
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
           
           <code class="ruby">      first = &quot;D4&quot;</code>
         </li>
       
-        <li class="covered" data-hits="204" data-linenumber="23">
-          <span class="hits">204</span>
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
           
           <code class="ruby">      while first == &quot;C3&quot; || first == &quot;C4&quot; ||</code>
         </li>
@@ -234,8 +428,8 @@
           <code class="ruby">            first == &quot;D3&quot; || first == &quot;D4&quot;</code>
         </li>
       
-        <li class="covered" data-hits="278" data-linenumber="25">
-          <span class="hits">278</span>
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
           
           <code class="ruby">        first = randomize</code>
         </li>
@@ -252,14 +446,14 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="204" data-linenumber="28">
-          <span class="hits">204</span>
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
           
           <code class="ruby">      @coordinates &lt;&lt; first</code>
         </li>
       
-        <li class="covered" data-hits="204" data-linenumber="29">
-          <span class="hits">204</span>
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
           
           <code class="ruby">      return first</code>
         </li>
@@ -282,20 +476,20 @@
           <code class="ruby">  def random_orientation</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="33">
-          <span class="hits">8</span>
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
           
           <code class="ruby">    first = @coordinates[0]</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="34">
-          <span class="hits">8</span>
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
           
           <code class="ruby">    orientation = [&quot;vertical&quot;, &quot;horizontal&quot;].sample</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="35">
-          <span class="hits">8</span>
+        <li class="missed" data-hits="0" data-linenumber="35">
+          
           
           <code class="ruby">    if @length == 2</code>
         </li>
@@ -318,26 +512,26 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="39">
-          <span class="hits">8</span>
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
           
           <code class="ruby">      if first[0] == &quot;D&quot; || first[0] == &quot;C&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="40">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="40">
+          
           
           <code class="ruby">        orientation = &quot;horizontal&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="41">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="41">
+          
           
           <code class="ruby">      elsif first[1] == &quot;3&quot; || first[1] == &quot;4&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="42">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="42">
+          
           
           <code class="ruby">        orientation = &quot;vertical&quot;</code>
         </li>
@@ -354,8 +548,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="45">
-          <span class="hits">8</span>
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
           
           <code class="ruby">    return orientation</code>
         </li>
@@ -378,26 +572,26 @@
           <code class="ruby">  def verify_next_coord</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="49">
+          
           
           <code class="ruby">    orientation = random_orientation</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="50">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="50">
+          
           
           <code class="ruby">    index = 0</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="51">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="51">
+          
           
           <code class="ruby">    while @coordinates.count &lt; @length.to_i</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="52">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="52">
+          
           
           <code class="ruby">      if orientation == &quot;vertical&quot;</code>
         </li>
@@ -414,8 +608,8 @@
           <code class="ruby">      elsif</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="55">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="55">
+          
           
           <code class="ruby">        coord = @coordinates[index][0] + (@coordinates[index][1].to_i + 1).to_s</code>
         </li>
@@ -426,14 +620,14 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="57">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="57">
+          
           
           <code class="ruby">      @coordinates &lt;&lt; coord</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="58">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
           
           <code class="ruby">      index += 1</code>
         </li>
@@ -462,20 +656,20 @@
           <code class="ruby">  def alpha_compares(coord)</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="63">
-          <span class="hits">10</span>
+        <li class="missed" data-hits="0" data-linenumber="63">
+          
           
           <code class="ruby">    key = {&quot;A&quot; =&gt; 1, &quot;B&quot; =&gt; 2, &quot;C&quot; =&gt; 3, &quot;D&quot; =&gt; 4}</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="64">
-          <span class="hits">10</span>
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
           
           <code class="ruby">    if coord.class == String</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="65">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
           
           <code class="ruby">      key[coord]</code>
         </li>
@@ -486,14 +680,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="67">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="67">
+          
           
           <code class="ruby">      alpha = key.find do |num|</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="68">
-          <span class="hits">13</span>
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
           
           <code class="ruby">        num[1] == coord</code>
         </li>
@@ -504,8 +698,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="70">
-          <span class="hits">5</span>
+        <li class="missed" data-hits="0" data-linenumber="70">
+          
           
           <code class="ruby">      return alpha[0]</code>
         </li>
@@ -534,32 +728,32 @@
           <code class="ruby">  def assign_coordinates(coords)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="75">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="75">
+          
           
           <code class="ruby">    coord_1 = coords.split[0]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="76">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="76">
+          
           
           <code class="ruby">    coord_2 = coords.split[1]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="77">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="77">
+          
           
           <code class="ruby">    @coordinates &lt;&lt; coord_1</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="78">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="78">
+          
           
           <code class="ruby">    if length == &quot;2&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="79">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="79">
+          
           
           <code class="ruby">      @coordinates &lt;&lt; coord_2</code>
         </li>
@@ -570,20 +764,20 @@
           <code class="ruby">    elsif</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="81">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
           
           <code class="ruby">      coord_1.chars[0] == coord_2.chars[0]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="82">
+          
           
           <code class="ruby">      @coordinates &lt;&lt; coord_1[0] + (coord_1[-1].to_i + 1).to_s</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="83">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="83">
+          
           
           <code class="ruby">      @coordinates &lt;&lt; coord_2</code>
         </li>
@@ -594,14 +788,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="85">
+          
           
           <code class="ruby">      @coordinates &lt;&lt; alpha_compares(alpha_compares(coord_1[0]) + 1) + coord_1[-1]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="86">
+          
           
           <code class="ruby">      @coordinates &lt;&lt; coord_2</code>
         </li>
@@ -612,8 +806,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="88">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="88">
+          
           
           <code class="ruby">    return @coordinates</code>
         </li>
@@ -640,6 +834,73 @@
           
           
           <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="86aaa2554d29e918d8eb4b373f5296b0fba1bcd1">
+  <div class="header">
+    <h3>lib/space.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Space</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :coordinate</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(coordinate)</code>
+        </li>
+      
+        <li class="covered" data-hits="48" data-linenumber="5">
+          <span class="hits">48</span>
+          
+          <code class="ruby">    @coordinate = coordinate</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">end </code>
         </li>
       
     </ol>
