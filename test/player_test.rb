@@ -19,4 +19,5 @@ class PlayerTest < Minitest::Test
     assert_instance_of Ship, player.cruiser
   end
 
+
 end
