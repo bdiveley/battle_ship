@@ -32,12 +32,19 @@ class GameTest < Minitest::Test
     assert_instance_of Ship, game.person.destroyer
   end
 
+  def test_each_player_has_one_board_to_start
+    game = Game.new
+
+    assert_instance_of Board, game.computer.board
+    assert_instance_of Board, game.person.board
+  end
+
   def test_computer_destroyer_coords_assigned
     game = Game.new
     game.randomly_assign_coordinates
 
     assert_instance_of Array, game.computer.destroyer.coordinates
-    assert_instance_of Array, game.computer.cruiser.coordinates 
+    assert_instance_of Array, game.computer.cruiser.coordinates
   end
 
   def test_can_assign_coordinates_randomly
@@ -55,6 +62,13 @@ class GameTest < Minitest::Test
     assert_equal 2, game.person.destroyer.coordinates.count
     assert_equal 3, game.person.cruiser.coordinates.count
   end
+
+  def test_display_gameboard
+    game = Game.new
+    binding.pry 
+    assert_equal " ", game.computer.board.grid.display
+  end
+
 
 
 end

@@ -16,5 +16,7 @@ class SpaceTest < Minitest::Test
     space = Space.new('A1')
 
     assert_equal 'A1', space.coordinate
+    assert_equal " ", space.display
   end
-end 
+
+end

@@ -15,6 +15,8 @@ if response ==  "p"
   game.randomly_assign_coordinates
   game.get_coordinates
 
+  game.display_board(player)
+
 elsif
   response == "i"
     "These are the instructions for now"
