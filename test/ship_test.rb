@@ -64,18 +64,32 @@ class ShipTest < Minitest::Test
     assert_equal 1, ship_2.coordinates.count
   end
 
-  def test_can_randomly_assign_orientation
-    ship = Ship.new("2")
-    ship.verify_first_coord
+  def test_orientation_is_horizontal_if_coord_D
+    ship = Ship.new("3")
+    ship.coordinates << "D1"
 
-    test = []
-    15.times do
-      test << ship.random_orientation
-    end
-    actual = test.all? do |orientation|
-      orientation == "vertical"
-    end
-    refute actual
+    assert_equal "horizontal", ship.random_orientation
+  end
+
+  def test_orientation_is_vertical_if_coord_4
+    ship = Ship.new("3")
+    ship.coordinates << "B4"
+
+    assert_equal "vertical", ship.random_orientation
+  end
+
+  def test_orientation_is_horizontal_if_C2_and_cruiser
+    ship = Ship.new("3")
+    ship.coordinates << "C2"
+
+    assert_equal "horizontal", ship.random_orientation
+  end
+
+  def test_orientation_is_vertical_if_B3_and_cruiser
+    ship = Ship.new("3")
+    ship.coordinates << "B3"
+
+    assert_equal "vertical", ship.random_orientation
   end
 
   def test_alpha_coords_return_nums
@@ -105,13 +119,13 @@ class ShipTest < Minitest::Test
     assert_equal 2, ship.coordinates.count
   end
 
-  def test_can_return_second_coordinate_for_cruiser
+  def test_can_add_2_more_coordinates_for_cruiser
     ship = Ship.new("3")
 
     ship.verify_first_coord
     ship.verify_next_coord
 
-    assert_equal 2, ship.coordinates.count
+    assert_equal 3, ship.coordinates.count
   end
 
 end

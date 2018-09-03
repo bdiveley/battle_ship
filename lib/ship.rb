@@ -1,6 +1,6 @@
 class Ship
-    attr_reader :length,
-                :coordinates
+    attr_accessor :length,
+                  :coordinates
 
   def initialize(length)
     @length = length
@@ -48,15 +48,13 @@ class Ship
   def verify_next_coord
     orientation = random_orientation
     index = 0
-
-    binding.pry
     while @coordinates.count < @length.to_i
       if orientation == "vertical"
-        next = alpha_compares(alpha_compares(@coordinates[index][0]) + 1) + @coordinates[index][-1]
+        coord = alpha_compares(alpha_compares(@coordinates[index][0]) + 1) + @coordinates[index][-1]
       elsif
-        next = @coordinates[index][0] + (@coordinates[index][1].to_i + 1).to_s
+        coord = @coordinates[index][0] + (@coordinates[index][1].to_i + 1).to_s
       end
-      @coordinates << next
+      @coordinates << coord
       index += 1
     end
   end
