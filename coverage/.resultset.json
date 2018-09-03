@@ -1,7 +1,26 @@
 {
   "Unit Tests": {
     "coverage": {
+      "/Users/baileydiveley/turing/projects/1module/battle_ship/lib/player.rb": [
+        1,
+        null,
+        null
+      ],
+      "/Users/baileydiveley/turing/projects/1module/battle_ship/lib/game.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
     },
-    "timestamp": 1535983459
+    "timestamp": 1535988710
   }
 }

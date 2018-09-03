@@ -12,5 +12,5 @@ elsif
     "These are the instructions for now"
 else
   response == "q"
-  p "Game over"
+  p "quit"
 end
