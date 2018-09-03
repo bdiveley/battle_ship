@@ -75,14 +75,14 @@ class Ship
     coord_1 = coords.split[0]
     coord_2 = coords.split[1]
     @coordinates << coord_1
-    if length == 2
+    if length == "2"
       @coordinates << coord_2
     elsif
       coord_1.chars[0] == coord_2.chars[0]
       @coordinates << coord_1[0] + (coord_1[-1].to_i + 1).to_s
       @coordinates << coord_2
     else
-      @coordinates << alpha_coord(num_coord(coord_1[0]) + 1) + coord_1[-1]
+      @coordinates << alpha_compares(alpha_compares(coord_1[0]) + 1) + coord_1[-1]
       @coordinates << coord_2
     end
     return @coordinates

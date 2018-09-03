@@ -145,4 +145,15 @@ class ShipTest < Minitest::Test
     assert_equal 3, ship_two.coordinates.count
   end
 
+  def test_can_assign_edge_coordinates_when_inputted
+    ship = Ship.new("2")
+    ship_two = Ship.new("3")
+
+    ship.assign_coordinates("D3 D4")
+    ship_two.assign_coordinates("B2 D2")
+
+    assert_equal 2, ship.coordinates.count
+    assert_equal 3, ship_two.coordinates.count
+  end
+
 end
