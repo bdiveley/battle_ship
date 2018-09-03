@@ -1,6 +1,7 @@
 require './lib/game'
 require './lib/player'
 require './lib/ship'
+require 'pry'
 
 
 puts "Welcome to BATTLESHIP \n\n"
@@ -13,6 +14,7 @@ if response ==  "p"
   game = Game.new
   game.randomly_assign_coordinates
   game.get_coordinates
+
 
 elsif
   response == "i"
