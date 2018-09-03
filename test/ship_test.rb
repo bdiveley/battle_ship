@@ -66,16 +66,22 @@ class ShipTest < Minitest::Test
 
   def test_orientation_is_horizontal_if_coord_D
     ship = Ship.new("3")
+    ship_2 = Ship.new("2")
     ship.coordinates << "D1"
+    ship_2.coordinates << "D3"
 
     assert_equal "horizontal", ship.random_orientation
+    assert_equal "horizontal", ship_2.random_orientation
   end
 
   def test_orientation_is_vertical_if_coord_4
     ship = Ship.new("3")
+    ship_2 = Ship.new("2")
     ship.coordinates << "B4"
+    ship_2.coordinates << "A4"
 
     assert_equal "vertical", ship.random_orientation
+    assert_equal "vertical", ship_2.random_orientation
   end
 
   def test_orientation_is_horizontal_if_C2_and_cruiser
@@ -126,6 +132,17 @@ class ShipTest < Minitest::Test
     ship.verify_next_coord
 
     assert_equal 3, ship.coordinates.count
+  end
+
+  def test_can_assign_coordinates_when_inputted
+    ship = Ship.new("2")
+    ship_two = Ship.new("3")
+
+    ship.assign_coordinates("A1 A2")
+    ship_two.assign_coordinates("B1 B3")
+
+    assert_equal 2, ship.coordinates.count
+    assert_equal 3, ship_two.coordinates.count
   end
 
 end
