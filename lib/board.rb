@@ -1,7 +1,7 @@
 require './lib/space'
 
 class Board
-  attr_reader :grid
+  attr_accessor :grid
 
   def initialize
     @grid = [[Space.new("A1"), Space.new("A2"), Space.new("A3"), Space.new("A4")], [Space.new("B1"), Space.new("B2"), Space.new("B3"), Space.new("B4")], [Space.new("C1"), Space.new("C2"), Space.new("C3"), Space.new("C4")], [Space.new("D1"), Space.new("D2"), Space.new("D3"), Space.new("D4")]]
@@ -25,18 +25,23 @@ class Board
   end
 
   def space_available?(guess)
+    found = find_space(guess)
+    found[0].display == " "
+  end
+
+  def find_space(guess)
     found = []
     @grid.each do |array|
       counter = 0
       while counter < 4
         if array[counter].coordinate == guess
-          found << array[counter].coordinate
-          found << array[counter].display
+          found << array[counter]
         end
         counter +=1
       end
     end
-    found[1] == " "
+      return found
   end
+
 
 end

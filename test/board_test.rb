@@ -39,4 +39,14 @@ class BoardTest < Minitest::Test
     assert board.space_available?(guess)
   end
 
+  def test_will_return_space_equal_to_guess
+    board = Board.new
+    guess = "D3"
+    expected = board.find_space("D3")
+
+    assert_equal "D3", expected[0].coordinate
+  end
+
+
+
 end

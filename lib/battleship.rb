@@ -10,19 +10,25 @@ response = gets.chomp.downcase
 if response ==  "p"
   game = Game.new
   game.randomly_assign_coordinates
+  print "I have laid out my ships on the grid.
+  You now need to layout your two ships.
+  The first is two units long and the
+  second is three units long.
+  The grid has A1 at the top left and D4 at the bottom right.
+
+  Enter the squares for the two-unit ship: "
+
   game.get_coordinates
 
-#make this a loop
-puts game.person.board.display_board
-p "Take your first shot!  Remember the grid has A1 at the top left and D4 at the bottom right."
-
-guess = gets.chomp.downcase
-
-
-#display board again
-#let computer take a guess
-#display computer Board
-#loop back to beginning until game = end
+  #make this a loop
+  puts game.person.board.display_board
+  p "Take your first shot!  Remember the grid has A1 at the top left and D4 at the bottom right."
+  guess = gets.chomp
+  puts game.computer.shot(guess)
+  puts game.computer.board.display_board
+  #let computer take a guess
+  #display person's Board
+  #loop back to beginning until someone's ships are sunk
 
 elsif
   response == "i"
