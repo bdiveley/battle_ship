@@ -56,12 +56,35 @@ class PlayerTest < Minitest::Test
   end
 
   def test_correct_message_for_guessing_same_spot_twice
-    skip
     player = Player.new
     player.destroyer.assign_coordinates("A1 A2")
     player.cruiser.assign_coordinates("B2 B4")
     player.shot("B3")
 
     assert_equal "This spot has already been guessed.  Try again!", player.shot("B3")
+  end
+
+  def test_space_changes_display_to_H_if_it_has_ship
+    player = Player.new
+    player.destroyer.assign_coordinates("A1 A2")
+    player.cruiser.assign_coordinates("B2 B4")
+    player.shot("A2")
+    assert_equal "H", player.board.find_space("A2")[0].display
+  end
+
+  def test_space_changes_display_to_H_if_it_has_ship
+    player = Player.new
+    player.destroyer.assign_coordinates("A1 A2")
+    player.cruiser.assign_coordinates("B2 B4")
+    player.shot("B4")
+    assert_equal "H", player.board.find_space("B4")[0].display
+  end
+
+  def test_space_changes_display_to_H_if_it_has_ship
+    player = Player.new
+    player.destroyer.assign_coordinates("A1 A2")
+    player.cruiser.assign_coordinates("B2 B4")
+    player.shot("C3")
+    assert_equal "M", player.board.find_space("C3")[0].display
   end
 end

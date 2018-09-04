@@ -1,5 +1,5 @@
 class Space
-  attr_reader :coordinate,
+  attr_accessor :coordinate,
               :display
 
   def initialize(coordinate)
@@ -13,6 +13,6 @@ class Space
 
   def miss
     @display = "M"
-  end 
+  end
 
 end
