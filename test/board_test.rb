@@ -20,10 +20,10 @@ class BoardTest < Minitest::Test
     assert_instance_of Space, board.grid[:D][3]
   end
 
-  # def test_can_display_row_of_spaces
-  #   board = Board.new
-  #   binding.pry
-  #   assert_equal [" ", " ", " ", " "], board.show_display
-  # end
+  def test_can_display_row_of_lines
+    board = Board.new
+
+    assert_equal " ", board.display_board
+  end
 
 end

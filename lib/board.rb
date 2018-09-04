@@ -6,14 +6,17 @@ class Board
   end
 
 
-  def show_display
-    @grid.map.with_index do |space, index|
-      index = 0
-      while index < 4
-      space[1][index%4].display
-       index += 1
+  def display_board
+    display_array = []
+    @grid.each do |key, array|
+      counter = 0
+      while counter < 4
+        display_array << array[counter].display
+        counter +=1
       end
     end
+    return display_array
+
   end
 
 end

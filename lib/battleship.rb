@@ -7,7 +7,6 @@ require 'pry'
 puts "Welcome to BATTLESHIP \n\n"
 print "Would you like to (p)lay, read the (i)nstructions, or (q)uit?
 >"
-
 response = gets.chomp.downcase
 
 if response ==  "p"
@@ -15,12 +14,16 @@ if response ==  "p"
   game.randomly_assign_coordinates
   game.get_coordinates
 
-  game.display_board(player)
+  # game.display_board
 
 elsif
   response == "i"
-    "These are the instructions for now"
-else
+  new_file = File.open('./data/instructions.txt', "r")
+  display = new_file.read
+  display.each_line do |line|
+  puts line
+    end
+elsif
   response == "q"
-  p "quit"
+  p "See ya later!"
 end
