@@ -1,3 +1,5 @@
+require './lib/player'
+
 class Game
     attr_reader :computer,
                 :person
@@ -5,6 +7,7 @@ class Game
   def initialize
     @computer = Player.new
     @person = Player.new
+
   end
 
   def randomly_assign_coordinates
@@ -30,5 +33,6 @@ class Game
     second_response = gets.chomp
     @person.cruiser.assign_coordinates(second_response)
   end
+
 
 end

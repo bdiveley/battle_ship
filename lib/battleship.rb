@@ -1,6 +1,4 @@
 require './lib/game'
-require './lib/player'
-require './lib/ship'
 require 'pry'
 
 
@@ -14,7 +12,17 @@ if response ==  "p"
   game.randomly_assign_coordinates
   game.get_coordinates
 
-  # game.display_board
+#make this a loop
+puts game.person.board.display_board
+p "Take your first shot!  Remember the grid has A1 at the top left and D4 at the bottom right."
+
+guess = gets.chomp.downcase
+
+
+#display board again
+#let computer take a guess
+#display computer Board
+#loop back to beginning until game = end
 
 elsif
   response == "i"

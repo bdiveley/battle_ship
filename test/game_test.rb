@@ -63,12 +63,4 @@ class GameTest < Minitest::Test
     assert_equal 3, game.person.cruiser.coordinates.count
   end
 
-  def test_display_gameboard
-    game = Game.new
-    binding.pry 
-    assert_equal " ", game.computer.board.grid.display
-  end
-
-
-
 end
