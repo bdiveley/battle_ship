@@ -39,6 +39,4 @@ class BoardTest < Minitest::Test
     assert board.space_available?(guess)
   end
 
-
-
 end

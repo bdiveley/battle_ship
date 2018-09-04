@@ -63,4 +63,5 @@ class GameTest < Minitest::Test
     assert_equal 3, game.person.cruiser.coordinates.count
   end
 
+
 end

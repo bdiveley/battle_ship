@@ -24,7 +24,7 @@ class Board
     " =========== \n .  1234 \n A: #{string[0..3]} \n B: #{string[4..7]} \n C: #{string[8..11]} \n D: #{string[12..15]} \n ==========="
   end
 
-  def space_display?(guess)
+  def space_available?(guess)
     found = []
     @grid.each do |array|
       counter = 0
