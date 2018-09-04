@@ -63,5 +63,10 @@ class GameTest < Minitest::Test
     assert_equal 3, game.person.cruiser.coordinates.count
   end
 
+  def test_gameover_starts_false
+    game = Game.new
+
+    refute game.gameover
+  end
 
 end

@@ -1,6 +1,4 @@
 require './lib/game'
-require 'pry'
-
 
 puts "Welcome to BATTLESHIP \n\n"
 print "Would you like to (p)lay, read the (i)nstructions, or (q)uit?
@@ -20,15 +18,20 @@ if response ==  "p"
 
   game.get_coordinates
 
-  #make this a loop
-  puts game.person.board.display_board
-  p "Take your first shot!  Remember the grid has A1 at the top left and D4 at the bottom right."
-  guess = gets.chomp
-  puts game.computer.shot(guess)
-  puts game.computer.board.display_board
-  #let computer take a guess
-  #display person's Board
-  #loop back to beginning until someone's ships are sunk
+
+  while game.over == false
+    puts "Your turn again!  Type your next shot here:"
+    puts game.person.board.display_board
+    guess = gets.chomp
+    puts game.computer.shot(guess)
+    puts game.computer.board.display_board
+
+    guess = game.person.board.get_random_coord
+    game.person.shot(guess)
+    puts "The computer guessed #{computer_shot}"
+    puts game.person.board.display_board
+  end
+
 
 elsif
   response == "i"
@@ -37,6 +40,7 @@ elsif
   display.each_line do |line|
   puts line
     end
+
 elsif
   response == "q"
   p "See ya later!"
