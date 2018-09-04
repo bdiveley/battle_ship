@@ -1,13 +1,10 @@
 require './lib/game'
-require './lib/player'
-require './lib/ship'
 require 'pry'
 
 
 puts "Welcome to BATTLESHIP \n\n"
 print "Would you like to (p)lay, read the (i)nstructions, or (q)uit?
 >"
-
 response = gets.chomp.downcase
 
 if response ==  "p"
@@ -15,11 +12,26 @@ if response ==  "p"
   game.randomly_assign_coordinates
   game.get_coordinates
 
+#make this a loop
+puts game.person.board.display_board
+p "Take your first shot!  Remember the grid has A1 at the top left and D4 at the bottom right."
+
+guess = gets.chomp.downcase
+
+
+#display board again
+#let computer take a guess
+#display computer Board
+#loop back to beginning until game = end
 
 elsif
   response == "i"
-    "These are the instructions for now"
-else
+  new_file = File.open('./data/instructions.txt', "r")
+  display = new_file.read
+  display.each_line do |line|
+  puts line
+    end
+elsif
   response == "q"
-  p "quit"
+  p "See ya later!"
 end

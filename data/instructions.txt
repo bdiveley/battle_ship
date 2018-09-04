@@ -1,10 +1,7 @@
-Basic Gameplay
-Players take turns firing shots (by calling out a grid coordinate) to attack enemy ships.
+Basic Gameplay:
 
-On your turn, type a number and letter combination that identifies a row and column on your target grid. Your opponent checks that coordinate on their ocean grid and responds "miss" if there is no ship there, or "hit" if you have correctly guessed a space that is occupied by one of their ships.
+Players take turns firing shots (by calling out a grid coordinate) to attack enemy ships. On your turn, type a number and letter combination that identifies a row and column on your target grid.
 
-Your opponent repeats this steps on their turn.
-
-When one of your ships or one of your opponents' has every slot filled with "hits", that ship has been sunk. In classic play, the phrase used is "You sunk my battleship!"
+Your opponent checks that coordinate on their ocean grid and responds "miss" if there is no ship there, or "hit" if you have correctly guessed a space that is occupied by one of their ships. Your opponent repeats this steps on their turn.  When one of your ships or one of your opponents' has every slot filled with "hits", that ship has been sunk. In classic play, the phrase used is "You sunk my battleship!"
 
 The first player to sink both of the opponent's ships wins the game.
