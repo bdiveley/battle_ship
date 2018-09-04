@@ -2,12 +2,13 @@ require './lib/player'
 
 class Game
     attr_reader :computer,
-                :person
+                :person,
+                :gameover
 
   def initialize
     @computer = Player.new
     @person = Player.new
-
+    @gameover = false
   end
 
   def randomly_assign_coordinates
@@ -18,6 +19,7 @@ class Game
   end
 
   def get_coordinates
+    puts "Take your first shot!  Remember the grid has A1 at the top left and D4 at the bottom right."
     response = gets.chomp
     @person.destroyer.assign_coordinates(response)
     puts "Enter the squares for the three-unit ship: "

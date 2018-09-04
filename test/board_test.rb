@@ -47,6 +47,23 @@ class BoardTest < Minitest::Test
     assert_equal "D3", expected[0].coordinate
   end
 
+  def test_will_return_all_coords_with_blank_display
+    board = Board.new
+    space = board.find_space("A1")
+    space[0].display = "H"
 
+
+    assert_equal ["A2", "A3", "A4", "B1", "B2", "B3", "B4", "C1", "C2", "C3", "C4", "D1", "D2", "D3", "D4"], board.get_available_coords
+  end
+
+  def test_will_randomly_return_available_coord
+    board = Board.new
+    space = board.find_space("D3")
+    space[0].display = "H"
+
+    100.times do
+      refute_equal "D3", board.get_random_coord
+      end
+  end
 
 end

@@ -43,5 +43,22 @@ class Board
       return found
   end
 
+  def get_available_coords
+    available_coords = []
+    @grid.map do |array|
+      counter = 0
+      while counter < 4
+        if array[counter].display == " "
+          available_coords << array[counter].coordinate
+        end
+        counter +=1
+      end
+    end
+    return available_coords
+  end
+
+  def get_random_coord
+    get_available_coords.shuffle.first
+  end
 
 end

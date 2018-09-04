@@ -87,4 +87,5 @@ class PlayerTest < Minitest::Test
     player.shot("C3")
     assert_equal "M", player.board.find_space("C3")[0].display
   end
+
 end
