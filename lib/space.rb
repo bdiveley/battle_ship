@@ -7,4 +7,12 @@ class Space
     @display = " "
   end
 
+  def hit
+    @display = "H"
+  end
+
+  def miss
+    @display = "M"
+  end 
+
 end

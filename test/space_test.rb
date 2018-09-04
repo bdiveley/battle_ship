@@ -19,4 +19,16 @@ class SpaceTest < Minitest::Test
     assert_equal " ", space.display
   end
 
+  def test_can_change_display_when_hit
+    space = Space.new('A1')
+
+    assert_equal "H", space.hit
+  end
+
+  def test_can_change_display_when_missed
+    space = Space.new('D4')
+
+    assert_equal "M", space.miss
+  end
+
 end
