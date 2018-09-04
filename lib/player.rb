@@ -15,10 +15,13 @@ class Player
   def shot(guess)
     if board.space_available?(guess)
       if search_ship_coords(@destroyer, guess)
+        #need to change display on specific space
         "You hit the destroyer"
       elsif search_ship_coords(@cruiser, guess)
+        #need to change display on specific space
         "You hit the cruiser"
       else
+        #need to change display on specific space
         "You missed!"
       end
     else

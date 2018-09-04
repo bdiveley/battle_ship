@@ -28,7 +28,7 @@ class PlayerTest < Minitest::Test
     assert_instance_of Board, player.board
   end
 
-  def test_correct_message_for_hiting_destroyer
+  def test_correct_message_for_hitting_destroyer
     player = Player.new
     player.destroyer.assign_coordinates("A1 A2")
     player.cruiser.assign_coordinates("B2 B4")

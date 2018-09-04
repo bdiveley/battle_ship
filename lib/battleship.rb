@@ -15,13 +15,11 @@ if response ==  "p"
 #make this a loop
 puts game.person.board.display_board
 p "Take your first shot!  Remember the grid has A1 at the top left and D4 at the bottom right."
-
-guess = gets.chomp.downcase
-
-
-#display board again
+guess = gets.chomp
+puts game.computer.shot(guess)
+puts game.computer.board.display_board
 #let computer take a guess
-#display computer Board
+#display person's Board
 #loop back to beginning until game = end
 
 elsif
