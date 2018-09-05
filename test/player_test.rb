@@ -1,11 +1,8 @@
 require './test/test_helper'
-require 'minitest/autorun'
-require 'minitest/pride'
 require './lib/player'
 require './lib/ship'
 require './lib/board'
 require './lib/space'
-require 'pry'
 
 class PlayerTest < Minitest::Test
 

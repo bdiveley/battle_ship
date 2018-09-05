@@ -1,6 +1,4 @@
 require './test/test_helper'
-require 'minitest/autorun'
-require 'minitest/pride'
 require './lib/player'
 require './lib/game'
 require './lib/ship'
