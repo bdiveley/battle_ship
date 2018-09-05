@@ -33,8 +33,12 @@ class Ship
     first = @coordinates[0]
     orientation = ["vertical", "horizontal"].sample
     if @length == 2
-      orientation = "horizontal" if first[0] == "D" ||
-      orientation = "vertical" if first[1] == "4"
+      if first[0] == "D"
+        orientation = "horizontal"
+      end
+      if first[1] == "4"
+        orientation = "vertical"
+      end
     else
       if first[0] == "D" || first[0] == "C"
         orientation = "horizontal"

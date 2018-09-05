@@ -29,7 +29,7 @@ class BoardTest < Minitest::Test
     assert_equal expected, board.get_display_array
   end
 
-  def test_can_display_row_of_space_diplays
+  def test_can_display_row_of_space_diplays_with_misses
     board = Board.new
     board.grid[0][0].display = "H"
     board.grid[1][1].display = "M"
