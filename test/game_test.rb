@@ -6,7 +6,6 @@ require './lib/game'
 require './lib/ship'
 require './lib/board'
 require './lib/space'
-require 'pry'
 
 class GameTest < Minitest::Test
 
@@ -53,14 +52,6 @@ class GameTest < Minitest::Test
 
     assert_equal 2, game.computer.destroyer.coordinates.count
     assert_equal 3, game.computer.cruiser.coordinates.count
-  end
-
-  def test_can_assign_coordinates_from_user
-    game = Game.new
-    game.get_coordinates
-
-    assert_equal 2, game.person.destroyer.coordinates.count
-    assert_equal 3, game.person.cruiser.coordinates.count
   end
 
   def test_gameover_starts_false

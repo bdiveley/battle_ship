@@ -26,16 +26,6 @@ class ShipTest < Minitest::Test
     assert_equal [], ship.coordinates
   end
 
-  def test_player_can_randomize_a_coordinate
-    ship = Ship.new("2")
-
-    5.times do
-    first_random = ship.randomize
-    second_random = ship.randomize
-    refute_equal first_random, second_random
-    end
-  end
-
   def test_first_coord_not_D4_for_destroyer
     ship = Ship.new("2")
     100.times do

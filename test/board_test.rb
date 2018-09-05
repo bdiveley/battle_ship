@@ -9,6 +9,8 @@ class BoardTest < Minitest::Test
 
   def test_it_exists
     board = Board.new
+
+    assert_instance_of Board, board
   end
 
   def test_starts_with_board_of_space_objects
@@ -51,7 +53,6 @@ class BoardTest < Minitest::Test
 
   def test_will_return_space_equal_to_guess
     board = Board.new
-    guess = "D3"
     expected = board.find_space("D3")
 
     assert_equal "D3", expected[0].coordinate
