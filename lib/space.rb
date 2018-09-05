@@ -1,6 +1,6 @@
 class Space
   attr_accessor :coordinate,
-              :display
+                :display
 
   def initialize(coordinate)
     @coordinate = coordinate

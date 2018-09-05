@@ -9,7 +9,7 @@ class Board
 
   def get_display_array
     display_array = []
-    @grid.each.with_index do |array|
+    @grid.each do |array|
       counter = 0
       while counter < 4
         display_array << array[counter].display
