@@ -29,6 +29,8 @@ if response ==  "p"
     puts game.person.board.display_board
   end
 
+  puts game.over
+
 elsif
   response == "i"
   new_file = File.open('./data/instructions.txt', "r")

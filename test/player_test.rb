@@ -121,6 +121,7 @@ class PlayerTest < Minitest::Test
   def test_will_display_ship_is_sunk
     player = Player.new
     player.cruiser.assign_coordinates("B2 B4")
+    player.destroyer.assign_coordinates("D1 D2")
     player.shot("B4")
     player.shot("B2")
 
@@ -136,9 +137,6 @@ class PlayerTest < Minitest::Test
     player.shot("B3")
     player.shot("A1")
     player.shot("A2")
-
     assert player.all_sunk
   end
-
-
 end

@@ -25,17 +25,17 @@ class Game
     @person.cruiser.assign_coordinates(second_response)
   end
 
-  # def over
-  #   if computer.all_sunk == true
-  #     over = true
-  #     "You win!"
-  #   elsif
-  #     person.all_sunk == true
-  #     over = true
-  #     "You lose!"
-  #   else
-  #     over = false
-  #   end
-  # end
+  def over
+    if computer.all_sunk
+      over = true
+      "You win!"
+    elsif
+      person.all_sunk
+      over = true
+      "You lose!"
+    else
+      over = false
+    end
+  end
 
 end
