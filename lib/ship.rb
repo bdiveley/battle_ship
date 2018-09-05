@@ -100,8 +100,8 @@ class Ship
   end
 
   def sunk
-    all_x = @coordinates.all? do |coord|
-      coord == "X"
+    @coordinates.all? do |coord|
+    coord == "X"
     end
   end
 
