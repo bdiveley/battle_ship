@@ -16,12 +16,12 @@ class Player
     if board.space_available?(guess)
       if search_ship_coords(@destroyer, guess)
         @destroyer.hit_ship(guess)
-         board.find_space(guess)[0].display = "H"
-        "You hit the destroyer"
+        board.find_space(guess)[0].display = "H"
+        destroyer.display_sunk
       elsif search_ship_coords(@cruiser, guess)
-          @cruiser.hit_ship(guess)
-          board.find_space(guess)[0].display = "H"
-        "You hit the cruiser"
+        @cruiser.hit_ship(guess)
+        board.find_space(guess)[0].display = "H"
+        cruiser.display_sunk
       else
         board.find_space(guess)[0].display = "M"
         "You missed!"
@@ -35,6 +35,10 @@ class Player
     ship.coordinates.any? do |coord|
       coord == guess
     end
+  end
+
+  def all_sunk
+    @destroyer.sunk && @cruiser.sunk
   end
 
 end

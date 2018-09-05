@@ -2,13 +2,11 @@ require './lib/player'
 
 class Game
     attr_reader :computer,
-                :person,
-                :over
+                :person
 
   def initialize
     @computer = Player.new
     @person = Player.new
-    @over = false
   end
 
   def randomly_assign_coordinates
@@ -26,5 +24,18 @@ class Game
     second_response = gets.chomp
     @person.cruiser.assign_coordinates(second_response)
   end
+
+  # def over
+  #   if computer.all_sunk == true
+  #     over = true
+  #     "You win!"
+  #   elsif
+  #     person.all_sunk == true
+  #     over = true
+  #     "You lose!"
+  #   else
+  #     over = false
+  #   end
+  # end
 
 end

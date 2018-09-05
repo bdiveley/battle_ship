@@ -99,5 +99,19 @@ class Ship
       return @coordinates
   end
 
+  def sunk
+    all_x = @coordinates.all? do |coord|
+      coord == "X"
+    end
+  end
+
+  def display_sunk
+    if sunk
+      "You sunk my ship!"
+    else
+      "You hit my ship!"
+    end
+  end
+
 
 end
