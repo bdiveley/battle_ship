@@ -64,7 +64,7 @@ class PlayerTest < Minitest::Test
     assert_equal "This spot has already been guessed.  Try again!", player.shot("B3")
   end
 
-  def test_space_changes_display_to_H_if_it_has_ship
+  def test_space_changes_display_to_H_if_it_has_ship_destroyer
     player = Player.new
     player.destroyer.assign_coordinates("A1 A2")
     player.cruiser.assign_coordinates("B2 B4")
@@ -73,7 +73,7 @@ class PlayerTest < Minitest::Test
     assert_equal "H", player.board.find_space("A2")[0].display
   end
 
-  def test_space_changes_display_to_H_if_it_has_ship
+  def test_space_changes_display_to_H_if_it_has_ship_cruiser
     player = Player.new
     player.destroyer.assign_coordinates("A1 A2")
     player.cruiser.assign_coordinates("B2 B4")
@@ -82,7 +82,7 @@ class PlayerTest < Minitest::Test
     assert_equal "H", player.board.find_space("B4")[0].display
   end
 
-  def test_space_changes_display_to_H_if_it_has_ship
+  def test_space_changes_display_to_M_without_a_ship
     player = Player.new
     player.destroyer.assign_coordinates("A1 A2")
     player.cruiser.assign_coordinates("B2 B4")
@@ -100,7 +100,7 @@ class PlayerTest < Minitest::Test
     assert_equal ["X", "A2"], player.destroyer.coordinates
   end
 
-  def test_ship_coords_changed_when_hit_made_cruiser
+  def test_1_ship_coord_changed_when_hit_made_cruiser
     player = Player.new
     player.destroyer.assign_coordinates("A1 A2")
     player.cruiser.assign_coordinates("B2 B4")
@@ -109,7 +109,7 @@ class PlayerTest < Minitest::Test
     assert_equal ["B2", "B3", "X"], player.cruiser.coordinates
   end
 
-  def test_ship_coords_changed_when_hit_made_cruiser
+  def test_2_ship_coords_changed_when_hit_made_cruiser
     player = Player.new
     player.cruiser.assign_coordinates("B2 B4")
     player.shot("B4")

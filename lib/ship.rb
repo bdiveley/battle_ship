@@ -33,7 +33,7 @@ class Ship
     first = @coordinates[0]
     orientation = ["vertical", "horizontal"].sample
     if @length == 2
-      orientation = "horizontal" if first[0] == "D"
+      orientation = "horizontal" if first[0] == "D" ||
       orientation = "vertical" if first[1] == "4"
     else
       if first[0] == "D" || first[0] == "C"
@@ -100,8 +100,8 @@ class Ship
   end
 
   def sunk
-    all_x = @coordinates.all? do |coord|
-      coord == "X"
+    @coordinates.all? do |coord|
+    coord == "X"
     end
   end
 
