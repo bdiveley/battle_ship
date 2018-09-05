@@ -16,12 +16,8 @@ class Game
     @computer.cruiser.verify_next_coord
   end
 
-  def get_coordinates
-    puts "Enter the squares for the two-unit ship: "
-    response = gets.chomp
+  def get_coordinates(response, second_response)
     @person.destroyer.assign_coordinates(response)
-    puts "Enter the squares for the three-unit ship: "
-    second_response = gets.chomp
     @person.cruiser.assign_coordinates(second_response)
   end
 

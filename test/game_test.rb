@@ -52,6 +52,17 @@ class GameTest < Minitest::Test
     assert_equal 3, game.computer.cruiser.coordinates.count
   end
 
+  def test_coordinates_added_from_user
+    game = Game.new
+    response = "A1 A2"
+    second_response = "B1 B3"
+
+    game.get_coordinates(response, second_response)
+
+    assert_equal ["B1", "B2", "B3"], game.person.cruiser.coordinates
+    assert_equal ["A1", "A2"], game.person.destroyer.coordinates
+  end
+
   def test_gameover_starts_false
     game = Game.new
     game.person.cruiser.assign_coordinates("B2 B4")

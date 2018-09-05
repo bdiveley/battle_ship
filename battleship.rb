@@ -15,7 +15,11 @@ if response ==  "p"
   second is three units long.
   The grid has A1 at the top left and D4 at the bottom right."
 
-  game.get_coordinates
+  puts "Enter the squares for the two-unit ship: "
+  response = gets.chomp
+  puts "Enter the squares for the three-unit ship: "
+  second_response = gets.chomp
+  game.get_coordinates(response, second_response)
 
   while game.over == false
     puts "Take a shot!  Don't forget the grid has A1 at the top left and D4 at the bottom right."
