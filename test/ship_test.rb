@@ -156,4 +156,11 @@ class ShipTest < Minitest::Test
     assert_equal 3, ship_two.coordinates.count
   end
 
+  def test_coords_change_when_ship_is_hit
+    ship = Ship.new("2")
+    ship.assign_coordinates("D3 D4")
+
+    assert_equal ["X", "D4"], ship.hit_ship("D3")
+  end
+
 end

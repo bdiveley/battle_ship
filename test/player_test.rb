@@ -88,4 +88,28 @@ class PlayerTest < Minitest::Test
     assert_equal "M", player.board.find_space("C3")[0].display
   end
 
+  def test_ship_coords_changed_when_hit_made_destroyer
+    player = Player.new
+    player.destroyer.assign_coordinates("A1 A2")
+    player.cruiser.assign_coordinates("B2 B4")
+    player.shot("A1")
+    assert_equal ["X", "A2"], player.destroyer.coordinates
+  end
+
+  def test_ship_coords_changed_when_hit_made_cruiser
+    player = Player.new
+    player.destroyer.assign_coordinates("A1 A2")
+    player.cruiser.assign_coordinates("B2 B4")
+    player.shot("B4")
+    assert_equal ["B2", "B3", "X"], player.cruiser.coordinates
+  end
+
+  def test_ship_coords_changed_when_hit_made_cruiser
+    player = Player.new
+    player.cruiser.assign_coordinates("B2 B4")
+    player.shot("B4")
+    player.shot("B2")
+    assert_equal ["X", "B3", "X"], player.cruiser.coordinates
+  end
+
 end

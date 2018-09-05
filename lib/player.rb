@@ -15,9 +15,11 @@ class Player
   def shot(guess)
     if board.space_available?(guess)
       if search_ship_coords(@destroyer, guess)
+        @destroyer.hit_ship(guess)
          board.find_space(guess)[0].display = "H"
         "You hit the destroyer"
       elsif search_ship_coords(@cruiser, guess)
+          @cruiser.hit_ship(guess)
           board.find_space(guess)[0].display = "H"
         "You hit the cruiser"
       else
