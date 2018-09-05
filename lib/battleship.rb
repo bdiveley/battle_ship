@@ -1,4 +1,5 @@
 require './lib/game'
+require 'pry'
 
 puts "Welcome to BATTLESHIP \n\n"
 print "Would you like to (p)lay, read the (i)nstructions, or (q)uit?
@@ -12,26 +13,23 @@ if response ==  "p"
   You now need to layout your two ships.
   The first is two units long and the
   second is three units long.
-  The grid has A1 at the top left and D4 at the bottom right.
-
-  Enter the squares for the two-unit ship: "
+  The grid has A1 at the top left and D4 at the bottom right."
 
   game.get_coordinates
 
-
   while game.over == false
-    puts "Your turn again!  Type your next shot here:"
-    puts game.person.board.display_board
+    puts "Take a shot!  Don't forget the grid has A1 at the top left and D4 at the bottom right."
     guess = gets.chomp
     puts game.computer.shot(guess)
     puts game.computer.board.display_board
 
     guess = game.person.board.get_random_coord
+    puts "The computer guessed #{guess}"
     game.person.shot(guess)
-    puts "The computer guessed #{computer_shot}"
     puts game.person.board.display_board
   end
 
+  puts game.over
 
 elsif
   response == "i"

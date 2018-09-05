@@ -156,4 +156,25 @@ class ShipTest < Minitest::Test
     assert_equal 3, ship_two.coordinates.count
   end
 
+  def test_coords_change_when_ship_is_hit
+    ship = Ship.new("2")
+    ship.assign_coordinates("D3 D4")
+
+    assert_equal ["X", "D4"], ship.hit_ship("D3")
+  end
+
+  def test_ship_starts_out_not_sunk
+    ship = Ship.new("3")
+    ship.assign_coordinates("D2 D4")
+
+    refute ship.sunk
+  end
+
+  def test_will_display_sunk_or_hit_message
+    ship = Ship.new("3")
+    ship.assign_coordinates("D2 D4")
+
+    assert_equal "You hit my ship!", ship.display_sunk
+  end
+
 end

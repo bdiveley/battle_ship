@@ -65,8 +65,28 @@ class GameTest < Minitest::Test
 
   def test_gameover_starts_false
     game = Game.new
+    game.person.cruiser.assign_coordinates("B2 B4")
+    game.person.destroyer.assign_coordinates("C2 C3")
+    game.computer.cruiser.assign_coordinates("A1 A3")
+    game.computer.destroyer.assign_coordinates("D1 D3")
 
-    refute game.gameover
+    refute game.over
+  end
+
+  def test_game_ends_when_ships_are_sunk
+    game = Game.new
+    game.person.cruiser.assign_coordinates("B2 B4")
+    game.person.destroyer.assign_coordinates("C2 C3")
+    game.computer.cruiser.assign_coordinates("A1 A3")
+    game.computer.destroyer.assign_coordinates("D1 D3")
+    game.person.shot("B4")
+    game.person.shot("B2")
+    game.person.shot("B3")
+    game.person.shot("C2")
+    game.person.shot("C3")
+    game.person.all_sunk
+
+    assert_equal "You lose!", game.over
   end
 
 end

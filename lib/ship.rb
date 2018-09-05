@@ -88,5 +88,30 @@ class Ship
     return @coordinates
   end
 
+  def hit_ship(guess)
+    @coordinates.map! do |coord|
+        if coord == guess
+          coord = "X"
+        else
+          coord
+        end
+      end
+      return @coordinates
+  end
+
+  def sunk
+    all_x = @coordinates.all? do |coord|
+      coord == "X"
+    end
+  end
+
+  def display_sunk
+    if sunk
+      "You sunk my ship!"
+    else
+      "You hit my ship!"
+    end
+  end
+
 
 end
