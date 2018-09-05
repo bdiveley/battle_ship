@@ -1,6 +1,3 @@
-require './lib/ship'
-require './lib/board'
-
 class Player
   attr_reader :destroyer,
               :cruiser,
